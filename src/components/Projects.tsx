@@ -6,7 +6,7 @@ import { portfolioData } from "@/data/portfolio";
 export function Projects() {
     return (
         <section className="py-20 px-4 bg-muted/50">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +16,7 @@ export function Projects() {
                     Projects
                 </motion.h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {portfolioData.projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -24,10 +24,10 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-card rounded-lg p-6 border hover:shadow-lg transition-all"
+                            className="bg-card rounded-lg p-6 border hover:shadow-lg hover:border-primary/50 transition-all flex flex-col"
                         >
-                            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                            <p className="text-muted-foreground mb-4">
+                            <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                            <p className="text-muted-foreground mb-4 flex-grow text-sm leading-relaxed">
                                 {project.description}
                             </p>
                             <div className="flex flex-wrap gap-2">

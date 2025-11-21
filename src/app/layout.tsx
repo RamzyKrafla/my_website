@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Ramzy Rafla | Portfolio",
   description: "Electrical & Electronic Engineering Student at EPFL",
+  icons: {
+    icon: "/profile.jpg",
+  },
 };
 
 export default function RootLayout({
