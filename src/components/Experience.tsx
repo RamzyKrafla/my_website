@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export function Experience() {
     return (
@@ -26,7 +26,7 @@ export function Experience() {
                         transition={{ delay: index * 0.1 }}
                         className="relative border-l-2 border-muted pl-8 pb-2"
                     >
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500" />
+                        <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-primary" />
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
                             <h3 className="text-xl font-semibold">{job.role}</h3>
                             <span className="text-sm text-muted-foreground flex items-center gap-1">

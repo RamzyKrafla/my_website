@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+import { Background } from "@/components/Background";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,8 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={cn(inter.className, "antialiased bg-background text-foreground")}>
-        {children}
+      <body className={cn(inter.className, "antialiased text-foreground")}>
+        <Background />
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -23,7 +23,7 @@ export function Skills() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
-                        className="px-6 py-3 bg-muted rounded-full text-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                        className="px-6 py-3 bg-muted rounded-full text-lg font-medium"
                     >
                         {skill}
                     </motion.div>

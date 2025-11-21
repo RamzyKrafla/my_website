@@ -14,7 +14,7 @@ export function Hero() {
                 className="space-y-4 max-w-3xl"
             >
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                    Hi, I&apos;m <span className="text-blue-400">{portfolioData.personal.name}</span>
+                    Hi, I&apos;m <span className="text-primary">{portfolioData.personal.name}</span>
                 </h1>
                 <h2 className="text-xl md:text-2xl text-muted-foreground">
                     {portfolioData.personal.role}

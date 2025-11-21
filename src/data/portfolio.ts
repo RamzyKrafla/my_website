@@ -6,8 +6,8 @@ export const portfolioData = {
             "I’m Ramzy Rafla, a student in Electrical and Electronic Engineering at EPFL with a strong focus on applied mathematics, machine learning, and software engineering. I enjoy building systems end to end, from the mathematical reasoning behind a model to the engineering that makes it work in practice. My background blends rigorous analytical training with hands-on development across multiple domains.",
         location: "Lausanne, Switzerland",
         email: "ramzy.rafla@epfl.ch", // Inferred from context, placeholder if needed
-        github: "https://github.com/ramzyrafla", // Placeholder
-        linkedin: "https://linkedin.com/in/ramzyrafla", // Placeholder
+        github: "https://github.com/RamzyKrafla",
+        linkedin: "https://www.linkedin.com/in/ramzy-rafla-a41201329",
     },
     education: [
         {

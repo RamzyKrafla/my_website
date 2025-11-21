@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
-import { ExternalLink, Github } from "lucide-react";
 
 export function Projects() {
     return (
@@ -25,10 +24,10 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow"
+                            className="bg-card rounded-lg p-6 border hover:shadow-lg transition-all"
                         >
                             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                            <p className="text-muted-foreground mb-4 h-20 overflow-hidden">
+                            <p className="text-muted-foreground mb-4">
                                 {project.description}
                             </p>
                             <div className="flex flex-wrap gap-2">
