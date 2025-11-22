@@ -12,9 +12,7 @@ export const metadata: Metadata = {
   description: "Electrical & Electronic Engineering Student at EPFL",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/rkr_favicon_dark.png', rel: 'icon', type: 'image/png' },
     ],
   },
 };
