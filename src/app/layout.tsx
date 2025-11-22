@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   title: "Ramzy Rafla | Portfolio",
   description: "Electrical & Electronic Engineering Student at EPFL",
   icons: {
-    icon: "/profile.jpg",
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+    ],
   },
 };
 
