@@ -1,34 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Tag } from "@/components/ui/Tag";
 
 export function Skills() {
-    return (
-        <section className="py-20 px-4 max-w-4xl mx-auto text-center">
-            <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl font-bold mb-12"
-            >
-                Skills & Technologies
-            </motion.h2>
+  return (
+    <section id="skills" className="mx-auto max-w-6xl px-6 py-24">
+      <SectionHeader
+        title="Skill map"
+        description="Grouped by how I actually use them: research, product systems, foundations, and delivery."
+        layout="split"
+      />
 
-            <div className="flex flex-wrap justify-center gap-4">
-                {portfolioData.skills.map((skill, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.05 }}
-                        className="px-6 py-3 bg-muted rounded-full text-lg font-medium"
-                    >
-                        {skill}
-                    </motion.div>
-                ))}
+      <div className="grid gap-4 md:grid-cols-2">
+        {portfolioData.skills.map((group, index) => (
+          <FadeIn
+            key={group.group}
+            as="div"
+            delay={index * 0.04}
+            y={8}
+            className="paper-card rounded-md border bg-card p-5 shadow-sm"
+            aria-label={group.group}
+          >
+            <h3 className="font-display text-2xl font-semibold tracking-tight">{group.group}</h3>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {group.items.map((skill) => (
+                <Tag key={skill} variant="outline">
+                  {skill}
+                </Tag>
+              ))}
             </div>
-        </section>
-    );
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
 }

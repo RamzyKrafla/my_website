@@ -1,55 +1,64 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FileText, Github, Linkedin, Mail } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { withBasePath } from "@/lib/paths";
 
 export function Contact() {
-    return (
-        <footer className="py-20 px-4 text-center bg-muted/20">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="space-y-8"
-            >
-                <h2 className="text-3xl font-bold">Get in Touch</h2>
-                <p className="text-muted-foreground max-w-xl mx-auto">
-                    I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-                </p>
+  const { personal, contactBlurb } = portfolioData;
 
-                <div className="flex justify-center gap-8">
-                    <a
-                        href={`mailto:${portfolioData.personal.email}`}
-                        className="p-3 rounded-full bg-background hover:bg-primary hover:text-primary-foreground transition-colors border"
-                        aria-label="Email"
-                    >
-                        <Mail className="w-6 h-6" />
-                    </a>
-                    <a
-                        href={portfolioData.personal.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-background hover:bg-primary hover:text-primary-foreground transition-colors border"
-                        aria-label="GitHub"
-                    >
-                        <Github className="w-6 h-6" />
-                    </a>
-                    <a
-                        href={portfolioData.personal.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-background hover:bg-primary hover:text-primary-foreground transition-colors border"
-                        aria-label="LinkedIn"
-                    >
-                        <Linkedin className="w-6 h-6" />
-                    </a>
-                </div>
+  return (
+    <footer id="contact" className="border-t bg-card/80 px-6 py-16">
+      <FadeIn
+        y={20}
+        className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Contact</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">Get in touch</h2>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">{contactBlurb}</p>
+        </div>
 
-                <div className="pt-10 text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} {portfolioData.personal.name}. All rights reserved.
-                </div>
-            </motion.div>
-        </footer>
-    );
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={`mailto:${personal.email}`}
+            className="rounded-md border bg-background p-3 transition hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Email"
+          >
+            <Mail className="h-5 w-5" />
+          </a>
+          <a
+            href={personal.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md border bg-background p-3 transition hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="GitHub"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <a
+            href={personal.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md border bg-background p-3 transition hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a
+            href={withBasePath("/MY_CV.pdf")}
+            className="rounded-md border bg-background p-3 transition hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="CV"
+          >
+            <FileText className="h-5 w-5" />
+          </a>
+        </div>
+
+        <div className="text-sm text-muted-foreground md:text-right">
+          © {personal.copyrightYear} {personal.name}. All rights reserved.
+        </div>
+      </FadeIn>
+    </footer>
+  );
 }

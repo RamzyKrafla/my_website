@@ -1,64 +1,43 @@
 # Ramzy Rafla - Personal Website
 
-This is a personal portfolio website built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Framer Motion](https://www.framer.com/motion/).
+Personal portfolio built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Framer Motion](https://www.framer.com/motion/).
 
-## 🚀 Getting Started Locally
+Deployed to GitHub Pages at [www.ramzyrafla.com](https://www.ramzyrafla.com/).
 
-To run the website on your computer:
-
-1.  **Install dependencies** (only needed once):
-    ```bash
-    npm install
-    ```
-
-2.  **Start the development server**:
-    ```bash
-    npm run dev
-    ```
-
-3.  Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📝 How to Update the Website
-
-### 1. Make Changes
--   **Content**: Edit `src/data/portfolio.ts` to update your bio, experience, projects, or skills.
--   **Design**: Edit components in `src/components/` or styles in `src/app/globals.css`.
-
-### 2. Verify Locally
-Always check your changes locally by running `npm run dev` before deploying.
-
-### 3. Deploy Changes
-Deployment is **automatic**. You just need to push your changes to GitHub.
-
-Run these commands in your terminal:
+## Getting started
 
 ```bash
-# 1. Stage all your changes
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+Useful scripts: `npm run lint`, `npm run typecheck`, `npm run build`.
+
+## How to update content
+
+- **Copy / bio / jobs / projects / hero text**: edit [`src/data/portfolio.ts`](src/data/portfolio.ts).
+- **Layout / styling**: edit components in `src/components/` or tokens in `src/app/globals.css`.
+- **Section order**: edit [`src/app/page.tsx`](src/app/page.tsx).
+
+AI / contributor conventions: see [`AGENTS.md`](AGENTS.md).
+
+## Deploy
+
+The live site only updates after you **push to `main`**. A local `npm run build` does not change [www.ramzyrafla.com](https://www.ramzyrafla.com/).
+
+```bash
 git add .
-
-# 2. Commit your changes with a message describing what you did
-git commit -m "Update about me section" 
-
-# 3. Push to GitHub
+git commit -m "Update portfolio content"
 git push origin main
 ```
 
-## 🔄 How Deployment Works
+GitHub Actions builds the static export and deploys to Pages (custom domain, site root — no `/my_website` base path). You do **not** need to commit the `out/` folder.
 
-This repository uses **GitHub Actions** to automatically build and deploy your site.
+### Checking deployment status
 
-1.  When you run `git push`, GitHub detects the new code.
-2.  It triggers the workflow defined in `.github/workflows/nextjs.yml`.
-3.  This workflow:
-    -   Installs dependencies.
-    -   Builds the static website (`npm run build`).
-    -   Uploads the result to GitHub Pages.
+1. Open the **Actions** tab on GitHub.
+2. Workflow run colors: yellow = in progress, green = live, red = failed (open the run for logs).
 
-**You do not need to run `npm run build` locally or commit the `out/` folder.**
-
-### Checking Deployment Status
-1.  Go to the **Actions** tab in your GitHub repository.
-2.  You will see a workflow run listed (e.g., "Deploy Next.js site to Pages").
-    -   🟡 **Yellow**: Building/Deploying.
-    -   ✅ **Green**: Deployed successfully.
-    -   ❌ **Red**: Something went wrong (click to see details).
+Pull requests also get a CI job (`lint` + `typecheck` + `build`) so broken changes are caught before merge.
