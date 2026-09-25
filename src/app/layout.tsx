@@ -11,29 +11,24 @@ const basePath = process.env.PAGES_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Ramzy Rafla | Portfolio",
-  description:
-    "EPFL Electrical & Electronic Engineering student building applied ML systems — medical imaging, RAG, and technical delivery.",
+  title: "Ramzy Rafla | CV",
+  description: "Curriculum vitae of Ramzy Rafla.",
   icons: {
     // Leading slash + basePath so GitHub Pages project deploys resolve correctly
     icon: [{ url: `${basePath}/rkr_favicon_dark.jpg`, type: "image/jpeg" }],
   },
   openGraph: {
-    title: "Ramzy Rafla | Portfolio",
-    description:
-      "EPFL Electrical & Electronic Engineering student building applied ML systems — medical imaging, RAG, and technical delivery.",
+    title: "Ramzy Rafla | CV",
+    description: "Curriculum vitae of Ramzy Rafla.",
     url: siteUrl,
     siteName: "Ramzy Rafla",
-    images: [{ url: "/profile.jpg", width: 800, height: 1000, alt: "Ramzy Rafla" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Ramzy Rafla | Portfolio",
-    description:
-      "EPFL Electrical & Electronic Engineering student building applied ML systems.",
-    images: ["/profile.jpg"],
+    card: "summary",
+    title: "Ramzy Rafla | CV",
+    description: "Curriculum vitae of Ramzy Rafla.",
   },
 };
 

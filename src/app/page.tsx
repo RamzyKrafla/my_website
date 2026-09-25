@@ -1,27 +1,19 @@
-import { Hero } from "@/components/Hero";
-import { CredibilityStrip } from "@/components/CredibilityStrip";
-import { SelectedWork } from "@/components/SelectedWork";
-import { Education } from "@/components/Education";
-import { Experience } from "@/components/Experience";
-import { Projects } from "@/components/Projects";
-import { Publications } from "@/components/Publications";
-import { WorkingNotes } from "@/components/WorkingNotes";
-import { Skills } from "@/components/Skills";
-import { Contact } from "@/components/Contact";
+import { withBasePath } from "@/lib/paths";
+
+const cvPath = withBasePath("/Ramzy_CV.pdf");
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <CredibilityStrip />
-      <SelectedWork />
-      <Experience />
-      <Education />
-      <Projects />
-      <Publications />
-      <WorkingNotes />
-      <Skills />
-      <Contact />
+    <main className="fixed inset-0 flex items-center justify-center bg-white px-6 text-center text-neutral-900">
+      <meta httpEquiv="refresh" content={`0;url=${cvPath}`} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `location.replace(${JSON.stringify(cvPath)})`,
+        }}
+      />
+      <a href={cvPath} className="text-lg underline underline-offset-4">
+        Ramzy Rafla CV
+      </a>
     </main>
   );
 }
